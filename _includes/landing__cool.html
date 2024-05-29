@@ -1,0 +1,280 @@
+
+<link rel="stylesheet" href="{{ /assets/css/animate.css | relative_url }}">
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"> -->
+
+<style>
+    /* On the spot overwrites */
+    
+    .rudra__landing__intro__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+        position: relative;
+    }
+
+    .rudra__landing__intro__container .canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        /* border: 1px solid white; */
+    }
+
+    canvas {
+        width: 100%;
+        height: 100%;
+        /* border: 1px solid white; */
+    }
+
+    .content__title {
+        font-size: 3rem;
+        font-weight: 600;
+        color: white;
+        text-align: center;
+    }
+
+    .animated, .on_flipped{
+        color: black;
+        background-color: white;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        z-index: 2;
+    }
+
+    .singha_container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        position: relative;
+        z-index: 3;
+        height: 100%;
+        width: 50%;
+    }
+
+    .Overlap_container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: row;
+        height: 100%;
+        width: 50%;
+    }
+
+    .Overlapper {
+        display: inline-block;
+        position: absolute;
+        /* left: 0; */
+        /* overflow: hidden; */
+        /* color: white; */
+        z-index: 4;
+    
+    }
+
+
+
+
+
+</style>
+
+
+
+<div id="main" role="main">
+    <article class="splash" itemscope itemtype="https://schema.org/CreativeWork">
+        <section class="page__content" itemprop="text">
+            
+            <div class="rudra__landing__intro__container">
+                <!-- 3js canvas with waves -->
+                <div id="canvasHolder" class="canvas">
+                    <canvas id="landingCanvas"></canvas>
+                </div>
+                
+                <div class="content" style="touch-action: none;">
+                    <div class="singha_container">
+                        <h1 class="content__title" style="padding-right: 1rem;">sinGhA</h1>
+                    </div>
+                    <div class="Overlap_container">
+                        <h1 class="foundation content__title Overlapper">FoUndATioN</h1>
+                        <h1 class="fellowship content__title Overlapper">FelloWshIp</h1>
+                        <h1 class="family content__title Overlapper">FAMiLy</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </article>
+</div>
+
+<!-- Animate the letters -->
+
+<script src="https://code.jquery.com/jquery-1.9.1.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js" defer></script>
+
+
+<script>
+    $(document).ready(function() {
+        let wait_time = 500;
+        let animation_speed = 30; // Lower is faster
+
+        // Setup
+        $(".foundation").textillate({
+            autoStart: false,
+            loop: false,
+            in: {
+                effect: 'fadeIn',
+                delayScale: 3,
+                delay: animation_speed, // delay in milliseconds
+                sync: false,
+                shuffle: false,
+                reverse: false,
+                callback: function () {
+                    window.setTimeout( () => {
+                        $(".foundation").textillate('out');
+                    }, wait_time );
+                }
+            },
+            out: {
+                effect: 'fadeOut',
+                delayScale: 3,
+                delay: animation_speed, // delay in milliseconds
+                sync: false,
+                shuffle: false,
+                reverse: true,
+                callback: function () {
+                    $(".fellowship").textillate('in');
+                }
+            },
+        });
+
+        $(".fellowship").textillate({
+            autoStart: false,
+            loop: false,
+            in: {
+                effect: 'fadeIn',
+                delayScale: 3,
+                delay: animation_speed, // delay in milliseconds
+                sync: false,
+                shuffle: false,
+                reverse: false,
+                callback: function () {
+                    window.setTimeout( () => {
+                        $(".fellowship").textillate('out');
+                    }, wait_time );
+                }
+            },
+            out: {
+                effect: 'fadeOut',
+                delayScale: 3,
+                delay: animation_speed, // delay in milliseconds
+                sync: false,
+                shuffle: false,
+                reverse: true,
+                callback: function () {
+                    $(".family").textillate('in');
+                }
+            },
+        });
+
+        $(".family").textillate({
+            autoStart: false,
+            loop: false,
+            in: {
+                effect: 'fadeIn',
+                delayScale: 3,
+                delay: animation_speed, // delay in milliseconds
+                sync: false,
+                shuffle: false,
+                reverse: false,
+                callback: function () {
+                    window.setTimeout( () => {
+                        $(".family").textillate('out');
+                    }, wait_time );
+                }
+            },
+            out: {
+                effect: 'fadeOut',
+                delayScale: 3,
+                delay: animation_speed, // delay in milliseconds
+                sync: false,
+                shuffle: false,
+                reverse: true,
+                callback: function () {
+                    $(".foundation").textillate('in');
+                }
+            },
+        });
+
+        // Start the animation
+        $(".foundation").textillate('in');
+
+    });
+</script>
+
+<!-- Update the content size -->
+<script>
+    function adjustContentHeight() {
+        const navbar = document.querySelector('.masthead');
+        const content = document.querySelector('.rudra__landing__intro__container');
+        const navbarHeight = navbar.offsetHeight;
+        content.style.height = `calc(100vh - ${navbarHeight}px)`;
+    }
+
+    // Adjust the content height on page load
+    window.addEventListener('load', adjustContentHeight);
+</script>
+
+
+<!-- three.js code -->
+
+
+<script type="x-shader/x-vertex" id="vertexshader">
+
+    attribute float scale;
+
+    void main() {
+
+        vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+
+        gl_PointSize = scale * ( 300.0 / - mvPosition.z );
+
+        gl_Position = projectionMatrix * mvPosition;
+
+    }
+
+</script>
+
+<script type="x-shader/x-fragment" id="fragmentshader">
+
+    uniform vec3 color;
+
+    void main() {
+
+        if ( length( gl_PointCoord - vec2( 0.5, 0.5 ) ) > 0.475 ) discard;
+
+        gl_FragColor = vec4( color, 1.0 );
+
+    }
+
+</script>
+
+<script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"
+      }
+    }
+</script>
+
+<script type="module" src="{{ '/assets/js/waves.js' | relative_url }}"></script>
