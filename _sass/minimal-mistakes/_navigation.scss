@@ -194,10 +194,12 @@
     &.site-logo {
       margin-left: 0;
       margin-right: 0.5rem;
+      margin-bottom: 0.2rem;
     }
 
     &.site-title {
       margin-left: 0;
+      font-family: $title-header;
     }
   }
 

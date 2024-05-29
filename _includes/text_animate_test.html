@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="http://textillate.js.org/assets/animate.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+</head>
+<body>
+    
+    <div>
+        <h1 class="tlt">Hello <span id = "flipper">WorldOver</span></h1>
+        <h1 class="tlt">
+            <ul class="texts">
+                <li>Some Title</li>   
+                <li>Another Title</li>
+                <li>Yet another</li>
+            </ul>
+            <ul class="texts">
+                <li>Some Title2</li>   
+                <li>Another Title2</li>
+                <li>Yet another2</li>
+            </ul>
+        </h1>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.9.1.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // $('#flipper').textillate({
+            //     in: {
+            //         effect: 'fadeIn',
+            //         delayScale: 3,
+            //         delay: 50, // delay in milliseconds
+            //         // initialDelay: 10000,
+            //         sync: false,
+            //         shuffle: false,
+            //         reverse: false,
+            //         callback: function () {
+            //             $('#flipper').textillate('out');
+
+            //         }
+            //     },
+            //     out: {
+            //         effect: 'fadeOut',
+            //         delayScale: 3,
+            //         delay: 50, // delay in milliseconds
+            //         sync: false,
+            //         shuffle: false,
+            //         reverse: false,
+            //         callback: function () {
+            //             $('#flipper').textillate('in');
+            //         }
+            //     }
+            // });
+            $('.texts').textillate({
+                minDisplayTime: 1000, 
+                in: { effect: 'flipInX', sync: true }, 
+                out :{  delay: 3, effect: 'lightSpeedOut', sync: true},
+                loop: true
+            });
+
+        });
+    </script>
+</body>
+</html>
