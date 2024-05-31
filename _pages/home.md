@@ -3,6 +3,11 @@ layout: landing
 title: "Home"
 permalink: /
 hidden: true
+brands:
+    - /assets/images/roots/columbia.png
+    - /assets/images/roots/harvard.png
+    - /assets/images/roots/mit.png
+    - /assets/images/roots/princeton.png
 ---
 
 ## our Mission
@@ -16,10 +21,7 @@ We aim to address this mission through a variety of programs and initiatives. Cu
 
 ## ouR roots
 
-- Columbia Logo
-- Harvard Logo
-- MIT Logo
-- Princeton Logo
+{% include landing__brands.html %}
 
 ## our teAM
 

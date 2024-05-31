@@ -1,0 +1,20 @@
+<style>
+    .brand__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .brand__holder img {
+        max-width: 250px;
+        height: auto;
+    }
+</style>
+
+<div class="brand__container">
+    {% for brand in page.brands %}
+        <div class="brand__holder">
+            <img src="{{ brand | relative_url }}">
+        </div>
+    {% endfor %}
+</div>
