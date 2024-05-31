@@ -8,6 +8,11 @@
     .brand__holder img {
         max-width: 250px;
         height: auto;
+        filter: grayscale(100%) brightness(50%);
+        transition: filter 0.5s;
+    }
+    .brand__holder img:hover {
+        filter: grayscale(0%) brightness(100%);
     }
 </style>
 
