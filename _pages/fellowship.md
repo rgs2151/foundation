@@ -9,4 +9,5 @@ The **Singha Fellowship** is a comprehensive program that lasts one academic yea
 It comes with a full tuition **scholarship** and a dedicated **mentorship** which guides you through your academic, professional, and personal journey.
 
 
-The program will launch in <ins>mid 2024</ins>.
+The program will launch in 
+<span class="rudra_highlight">mid 2024.</span>
