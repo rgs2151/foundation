@@ -1,10 +1,12 @@
 # main links
 main:
   - title: "Home"
-    url: "#"
+    url: "/"
+  - title: "Posts"
+    url: "/posts"
   - title: "Fellowship"
-    url: "#"
+    url: "/fellowship"
   - title: "Funding"
-    url: "#"
+    url: "/funding"
   - title: "About"
     url: "/about"

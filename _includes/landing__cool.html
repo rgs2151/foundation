@@ -21,13 +21,11 @@
         width: 100%;
         height: 100%;
         z-index: -1;
-        /* border: 1px solid white; */
     }
 
     canvas {
         width: 100%;
         height: 100%;
-        /* border: 1px solid white; */
     }
 
     .content__title {
@@ -79,40 +77,52 @@
         /* overflow: hidden; */
         /* color: white; */
         z-index: 4;
-    
     }
 
+    /* When on small devices, singha_container and  Overlap_container should be on top of each other*/
+    /* Options are 768, 992, 1200 */
+    @media (max-width: 992px) {
 
+        .content {
+            display: flex;
+            flex-direction: column;
+        }
 
+        .singha_container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 50%;
+            width: 100%;
+        }
 
-
+        .Overlap_container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 50%;
+            width: 100%;
+        }
+    }
 </style>
 
 
-
-<div id="main" role="main">
-    <article class="splash" itemscope itemtype="https://schema.org/CreativeWork">
-        <section class="page__content" itemprop="text">
-            
-            <div class="rudra__landing__intro__container">
-                <!-- 3js canvas with waves -->
-                <div id="canvasHolder" class="canvas">
-                    <canvas id="landingCanvas"></canvas>
-                </div>
-                
-                <div class="content" style="touch-action: none;">
-                    <div class="singha_container">
-                        <h1 class="content__title" style="padding-right: 1rem;">sinGhA</h1>
-                    </div>
-                    <div class="Overlap_container">
-                        <h1 class="foundation content__title Overlapper">FoUndATioN</h1>
-                        <h1 class="fellowship content__title Overlapper">FelloWshIp</h1>
-                        <h1 class="family content__title Overlapper">FAMiLy</h1>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </article>
+<div class="rudra__landing__intro__container">
+    <!-- 3js canvas with waves -->
+    <div id="canvasHolder" class="canvas">
+        <canvas id="landingCanvas"></canvas>
+    </div>
+    
+    <div class="content">
+        <div class="singha_container">
+            <h1 class="content__title" style="padding-right: 1rem;">sinGhA</h1>
+        </div>
+        <div class="Overlap_container">
+            <h1 class="foundation content__title Overlapper">FoUndATioN</h1>
+            <h1 class="fellowship content__title Overlapper">FeLLoWshiP</h1>
+            <h1 class="family content__title Overlapper">FAMiLy</h1>
+        </div>
+    </div>
 </div>
 
 <!-- Animate the letters -->
@@ -121,7 +131,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js" defer></script>
 
-
+<!-- Landing text animations -->
 <script>
     $(document).ready(function() {
         let wait_time = 500;

@@ -2,4 +2,23 @@
 layout: default
 ---
 
-{% include landing__cool.html %}
+<div id="main" role="main">
+    <article class="splash" itemscope itemtype="https://schema.org/CreativeWork">
+        <section class="page__content" itemprop="text">
+
+            {% include landing__cool.html %}
+            
+        </section>
+    </article>
+
+    <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+        <div class="page__inner-wrap">
+            <section class="page__content">
+                {{ content | markdownify }}
+            </section class="page__content">
+        </div>
+    </article>
+
+    {% include page__related.html posts=site.posts %}
+
+</div>
