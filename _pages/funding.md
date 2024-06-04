@@ -4,11 +4,9 @@ layout: single
 permalink: /funding
 ---
 
-## HoW cAn i contribute?
+## hoW cAn i contribute?
 
-You cant! 
-<!-- <span class="rudra_highlight"> -->
-We are fully **self-funded** and have no plans to accept external support for the foreseeable future.
+Thank you for your interest in contributing to our efforts. Currently, we are fully **self-funded** and do not have plans to accept any external support in the foreseeable future. We appreciate your enthusiasm and willingness to help.
 
 <hr>
 If this changes, we will update this page accordingly.

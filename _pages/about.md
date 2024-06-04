@@ -4,8 +4,9 @@ title: "About"
 permalink: /about
 ---
 
-## About Foundation
-This is a page about the Foundation.
+## About FoundAtion
+Some information about the foundation.
 
-## About Me
-This is a page about me.
+## conTAct
+Contact information.
+

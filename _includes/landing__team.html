@@ -1,0 +1,47 @@
+<style>
+    .team__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    .team__holder {
+        margin: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .team__holder img {
+        max-width: 200px;
+        height: auto;
+
+        filter: grayscale(100%) brightness(70%);
+        transition: filter 0.5s;
+    }
+    .team__holder img:hover {
+        filter: grayscale(20%) brightness(100%);
+    }
+    .team__holder .team__content {
+        /* margin-top: 10px; */
+        /* position: absolute; */
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        z-index: 1;
+    }
+</style>
+
+<div class="team__container">
+    {% for member in page.team %}
+        <div class="team__holder">
+            <img src="{{ member.image | relative_url }}">
+            <div class="team__content">
+                <span>{{ member.name }}</span>
+                <span style="font-size: 0.7em;">{{ member.title }}</span>
+                <span style="font-size: 0.6em; opacity: 70%;">{{ member.email }}</span>
+            </div>
+        </div>
+    {% endfor %}
+</div>

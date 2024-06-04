@@ -8,6 +8,23 @@ brands:
     - /assets/images/roots/harvard.png
     - /assets/images/roots/mit.png
     - /assets/images/roots/princeton.png
+team:
+    - name: "Rudramani Singha"
+      title: "MS BME Columbia SEAS '24"
+      image: /assets/images/team/rudra.jpg
+      email: rudra [at] singhafoundation.org
+    - name: "Dalika Dharod"
+      title: "MArch II Harvard GSD '26"
+      image: /assets/images/missing_person.jpg
+      email: dalika [at] singhafoundation.org
+    - name: "Jane Doe"
+      title: "BS"
+      image: /assets/images/missing_person.jpg
+      email: jane [at] singhafoundation.org
+    - name: "Jane Doe"
+      title: "BS"
+      image: /assets/images/missing_person.jpg
+      email: jane [at] singhafoundation.org
 ---
 
 ## our Mission
@@ -26,3 +43,5 @@ We aim to address this mission through a variety of programs and initiatives. Cu
 ## our teAM
 
 This is our team.
+
+{% include landing__team.html %}
